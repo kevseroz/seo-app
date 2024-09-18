@@ -18,9 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  margin: 12rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  @apply xl:m-40 xl:mt-20 xl:mb-10 lg:m-24 lg:mt-20 m-5 md:m-10;
 }
 
 @layer utilities {
@@ -30,56 +28,33 @@ body {
 }
 
 /*List Design*/
+
 .card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: var(--foreground);
-  display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  transition: all 0.3s;
+  @apply bg-white rounded-xl shadow-md text-black gap-4 p-5 m-5 grid lg:grid-cols-[1fr,4fr,1fr] md:grid-cols-[1fr,4fr,1fr] sm:grid-cols-1;
 }
 
 .image {
-  border-radius: 10px;
-  width: 150px;
-  height: 190px;
+  @apply rounded-lg lg:w-40 lg:h-60 md:w-40 md:h-60 w-full h-96;
+
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: bold;
+  @apply text-2xl font-bold;
 }
 
 .description {
-    margin-top: 1rem;
+  @apply mt-4;
 }
 
 .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 1rem;
+    @apply flex flex-col justify-between ml-4;
 }
 
 .button {
-  background-color: var(--foreground);
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  transition: all 0.3s;
-  height: 50px;
-  width: 150px !important;
+  @apply bg-black text-white py-2 px-4 rounded-lg w-36;
+
 }
 
 .button-placement {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+    @apply flex justify-end items-center;
 }
