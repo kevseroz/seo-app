@@ -34,7 +34,7 @@ body {
 }
 
 .image {
-  @apply rounded-lg lg:w-40 lg:h-60 md:w-40 md:h-60 w-full h-96;
+  @apply rounded-lg lg:w-40 lg:h-40 md:w-40 md:h-40 w-full h-full;
 
 }
 
