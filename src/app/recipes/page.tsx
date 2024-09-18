@@ -23,7 +23,7 @@ export default async function Home() {
               <div className={'description'}>{item.description}</div>
             </div>
             <div className={'button-placement'}>
-              <Link href={`/recipe/${item.id}`}>
+              <Link href={`/recipes/${item.id}`}>
                 <button className={'button'}>Go To Recipe</button>
               </Link>
             </div>
