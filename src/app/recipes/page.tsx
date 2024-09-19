@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Recipe list',
     description: 'Homemade recipes that you can make at home.',
+    images: [
+      {
+        url: 'https://seo-app-woad.vercel.app/images/cupcake.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Recipe list',
+      },
+    ],
   },
 }
 
