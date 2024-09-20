@@ -20,20 +20,25 @@ export async function generateMetadata(
 
   return {
     title: data.title,
-    description: data.title,
-    keywords: data.title,
+    description: data.description,
+    keywords: [data.title, 'recipe', 'homemade', 'delicious'],
     openGraph: {
       url: `https://seo-app-woad.vercel.app/recipes/${id}`,
       title: data.title,
-      description: data.title,
+      description: data.description,
       images: [
         `https://seo-app-woad.vercel.app/images/${data.title.toLowerCase()}.jpg`,
         ...previousImages,
       ],
       type: 'website',
     },
+    twitter: {
+      site: `https://seo-app-woad.vercel.app/recipes/${id}`,
+      creator: '@skevseroz',
+    },
   }
 }
+
 export default async function Page({ params }: PageProps) {
   const data: Recipe = await fetchRecipe(params.id)
 
