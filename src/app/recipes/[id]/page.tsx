@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { PageProps, Recipe } from '@/app/types'
+import { PageProps, Recipe as RecipeType } from '@/app/types'
 import { fetchRecipe } from '@/app/actions'
 import type { Metadata, ResolvingMetadata } from 'next'
+import { WithContext, Recipe } from 'schema-dts'
+import Script from 'next/script'
 
 type Props = {
   params: { id: string }
@@ -14,7 +16,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const id = params.id
 
-  const data: Recipe = await fetchRecipe(id)
+  const data: RecipeType = await fetchRecipe(id)
 
   const previousImages = (await parent).openGraph?.images || []
 
@@ -40,10 +42,31 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: PageProps) {
-  const data: Recipe = await fetchRecipe(params.id)
+  const data: RecipeType = await fetchRecipe(params.id)
+
+  const jsonLd: WithContext<Recipe> = {
+    '@context': 'https://schema.org',
+    '@type': 'Recipe',
+    name: data.title,
+    image: `https://seo-app-woad.vercel.app/images/${data.title.toLowerCase()}.jpg`,
+    description: data.description,
+    recipeCategory: 'food',
+    recipeCuisine: 'Global',
+    recipeIngredient: data.ingredients,
+    recipeInstructions: data.description,
+    keywords: data.title + 'recipe, recipes, homemade, delicious',
+    author: `https://seo-app-woad.vercel.app/recipes/${params.id}`,
+  }
 
   return (
     <>
+      <Script
+        id="recipe-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <div className={'button-container'}>
         <Link href={'/recipes'}>
           <button className={'back-button'}>Back To Recipes</button>

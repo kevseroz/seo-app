@@ -37,6 +37,10 @@ const jsonLd: WithContext<Recipe> = {
   name: 'Recipe list',
   image: 'https://seo-app-woad.vercel.app/images/cupcake.jpg',
   description: 'Homemade recipes that you can make at home.',
+  recipeCategory: 'food',
+  keywords: 'recipe, recipes, homemade, delicious',
+  recipeCuisine: 'Global',
+  author: 'https://seo-app-woad.vercel.app/recipes/',
 }
 
 export default async function Home() {
