@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { fetchRecipes } from '@/app/actions'
-import { Recipe } from '@/app/types'
+import { Recipe as RecipeType } from '@/app/types'
 import type { Metadata } from 'next'
+import { WithContext, Recipe } from 'schema-dts'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Recipes',
@@ -26,17 +28,31 @@ export const metadata: Metadata = {
   twitter: {
     site: 'https://seo-app-woad.vercel.app/recipes/',
     creator: '@skevseroz',
-    card: 'summary',
   },
 }
 
+const jsonLd: WithContext<Recipe> = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: 'Recipe list',
+  image: 'https://seo-app-woad.vercel.app/images/cupcake.jpg',
+  description: 'Homemade recipes that you can make at home.',
+}
+
 export default async function Home() {
-  const data: Recipe[] = await fetchRecipes()
+  const data: RecipeType[] = await fetchRecipes()
 
   return (
     <div>
+      <Script
+        id="recipe-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <ul>
-        {data.map((item: Recipe) => (
+        {data.map((item: RecipeType) => (
           <li key={item.id} className={'card'}>
             <Image
               src={`/images/${item.title.toLowerCase()}.jpg`}

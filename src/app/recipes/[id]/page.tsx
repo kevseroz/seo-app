@@ -35,7 +35,6 @@ export async function generateMetadata(
     twitter: {
       site: `https://seo-app-woad.vercel.app/recipes/${id}`,
       creator: '@skevseroz',
-      card: 'summary',
     },
   }
 }
