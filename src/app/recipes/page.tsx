@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     site: 'https://seo-app-woad.vercel.app/recipes/',
     creator: '@skevseroz',
+    card: 'summary',
   },
 }
 
