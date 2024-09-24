@@ -51,7 +51,7 @@ body {
 }
 
 .button {
-  @apply bg-black text-white py-2 px-4 rounded-lg w-36;
+  @apply bg-background text-gray-700 py-2 px-4 rounded-lg w-36;
 
 }
 
@@ -94,9 +94,9 @@ body {
 }
 
 .button-container {
-  @apply flex justify-center items-center xl:m-0 md:m-0 m-4;
+  @apply flex justify-center items-center m-4 mt-0;
 }
 
 .back-button {
-  @apply bg-black text-white py-2 px-4 rounded-lg w-40;
+  @apply bg-background text-gray-700 py-2 px-4 rounded-lg w-40;
 }

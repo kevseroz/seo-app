@@ -54,8 +54,7 @@ export default async function Page({ params }: PageProps) {
     recipeCuisine: 'Global',
     recipeIngredient: data.ingredients,
     recipeInstructions: data.description,
-    keywords: data.title + 'recipe, recipes, homemade, delicious',
-    author: `https://seo-app-woad.vercel.app/recipes/${params.id}`,
+    keywords: `${data.title}, recipe, recipes, homemade, delicious`,
   }
 
   return (
@@ -67,13 +66,14 @@ export default async function Page({ params }: PageProps) {
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <div className={'button-container'}>
-        <Link href={'/recipes'}>
-          <button className={'back-button'}>Back To Recipes</button>
-        </Link>
-      </div>
+
       <div className={'detail-container'}>
         <div className={'image-card'}>
+          <div className={'button-container'}>
+            <Link href={'/recipes'}>
+              <button className={'back-button'}>Back To Recipes</button>
+            </Link>
+          </div>
           <Image
             src={`/images/${data.title.toLowerCase()}.jpg`}
             alt={data.title}
@@ -89,7 +89,7 @@ export default async function Page({ params }: PageProps) {
               <li className={'ingredients'} key={ingredient}>
                 <Image
                   src={'/images/indicator.svg'}
-                  alt={ingredient}
+                  alt={'ingredient'}
                   width={20}
                   height={20}
                   className={'svg'}

@@ -40,7 +40,6 @@ const jsonLd: WithContext<Recipe> = {
   recipeCategory: 'food',
   keywords: 'recipe, recipes, homemade, delicious',
   recipeCuisine: 'Global',
-  author: 'https://seo-app-woad.vercel.app/recipes/',
 }
 
 export default async function Home() {
