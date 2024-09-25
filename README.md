@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SEO App - Next.js Project
+
+This is an SEO-focused project developed using Next.js, bootstrapped with create-next-app. The project utilizes Server-Side Rendering (SSR) to optimize for SEO, ensuring that search engines can easily crawl and index the pages. It also includes Responsive Design, Social Media Metatags, and Structured Data for enhanced SEO performance.
+
+## Features
+
+Server-Side Rendering (SSR) for better SEO performance
+Responsive Design for mobile and desktop views
+Social Media Metatags for enhanced sharing (Open Graph and Twitter Card)
+Structured Data for rich results on search engines
+SEO performance evaluation using Lighthouse
 
 ## Getting Started
 
@@ -16,21 +26,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# SEO Features
+## Social Media Metatags
+This project integrates Open Graph and Twitter (X) metatags to optimize how content is displayed when shared on social media. By including these tags, you can control the image, title, and description that appear when your pages are shared.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Test your Open Graph tags with the [Facebook Debugger](https://developers.facebook.com/tools/debug/?checkpoint_src=any).
+Preview your Twitter Cards using the [Twitter Card Validator](https://cards-dev.x.com/validator?mx=2).
 
-## Learn More
+## Structured Data
 
-To learn more about Next.js, take a look at the following resources:
+Structured Data is used to provide search engines with better context about the content of your site. In this project, schema.org structured data is implemented to improve search engine visibility and increase the likelihood of generating rich results.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can test the structured data implementation using the [Google Rich Results Test](https://search.google.com/test/rich-results).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Lighthouse SEO Testing
 
-## Deploy on Vercel
+Lighthouse is used to measure the performance, accessibility, and SEO of the project. Key metrics such as Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and First Input Delay (FID) are tested and optimized to improve SEO rankings.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To run Lighthouse, open Chrome DevTools, go to the Lighthouse tab, and run a test on your project to get detailed feedback.
