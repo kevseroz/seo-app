@@ -80,6 +80,7 @@ export default async function Page({ params }: PageProps) {
             width={500}
             height={500}
             className={'detail-image'}
+            priority
           />
         </div>
         <div className={'detail-card'}>

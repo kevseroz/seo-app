@@ -63,6 +63,7 @@ export default async function Home() {
               width={150}
               height={150}
               className={'image'}
+              priority={item.id === 1 && true}
             />
             <div className={'card-content'}>
               <h2 className={'title'}>{item.title}</h2>
